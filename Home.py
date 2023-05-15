@@ -14,7 +14,7 @@ api_key = "zEFBwm5W28FMe4CYcT3Ci5fBPZnAifKPrMLgx3fB"
 url = "https://api.nasa.gov/planetary/apod?" \
       f"api_key={api_key}"
 
-#Make request
+# Make request
 request = requests.get(url)
 
 # Get a dictionary with data
@@ -23,13 +23,17 @@ content = request.json()
 # Access the title
 title_body = ""
 for title in content["title"]:
-      title_body = title_body + title
+    title_body = title_body + title
 
 # Access the description
 description_body = ""
-for description in content["description"]:
-      description_body = description_body + description
+for description in content["explanation"]:
+    description_body = description_body + description
 
+st.set_page_config(layout="wide")
 
+st.title(f"{title_body}")
+st.image("images/image.jpg")
+st.write(f"{description_body}")
 
 
