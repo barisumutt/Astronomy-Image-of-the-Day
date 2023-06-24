@@ -9,7 +9,6 @@ Ensure that you have the following dependencies installed in your Python environ
   
 You can install these dependencies by running the following command:
 
-Copy code
 
 ```bash
 pip install streamlit requests
